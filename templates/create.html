@@ -1,0 +1,30 @@
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+
+
+
+<form action="" method = 'POST'>
+	{% csrf_token %}
+	{{form}}
+  <input type="submit" value="Submit">
+</form> 
+
+
+
+
+</body>
+<script type="text/javascript">
+	{% if messages %}
+		{% for message in messages %}
+			swal("{{message}}");
+		{% endfor %}
+	{% endif %}
+</script>
+</html>
